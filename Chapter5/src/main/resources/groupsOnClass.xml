@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="suitename">
+    <test name="ruAll">
+        <classes>
+            <class name="com.xm.testng.groups.GroupOnClass1"></class>
+            <class name="com.xm.testng.groups.GroupOnClass2"></class>
+            <class name="com.xm.testng.groups.GroupOnClass3"></class>
+        </classes>
+    </test>
+
+    <test name="onlyStudent">
+        <groups>
+            <run>
+                <include name="stu"/>
+            </run>
+        </groups>
+
+        <classes>
+            <class name="com.xm.testng.groups.GroupOnClass1">
+                <methods>
+                    <!--只测试stu1方法不测试stu2方法-->
+                    <include name="stu1"/>
+                </methods>
+            </class>
+            <class name="com.xm.testng.groups.GroupOnClass2"></class>
+            <class name="com.xm.testng.groups.GroupOnClass3"></class>
+        </classes>
+
+    </test>
+
+</suite>
